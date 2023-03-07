@@ -45,7 +45,7 @@
     sudo cp $HOME/go/bin/dymd /usr/local/bin
 #### 验证 Dymension Hub 完整节点是否已正确安装
     dymd version --long
-    <img width="519" alt="微信图片_20230307154446" src="https://user-images.githubusercontent.com/100336530/223357077-71a3e0a9-ba36-40bf-9d86-d1ecd435e050.png">
+<img width="519" alt="微信图片_20230307154446" src="https://user-images.githubusercontent.com/100336530/223357077-71a3e0a9-ba36-40bf-9d86-d1ecd435e050.png">
 
 
 
