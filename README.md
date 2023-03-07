@@ -46,13 +46,28 @@
 #### 验证 Dymension Hub 完整节点是否已正确安装
     dymd version --long
 <img width="519" alt="微信图片_20230307154446" src="https://user-images.githubusercontent.com/100336530/223357077-71a3e0a9-ba36-40bf-9d86-d1ecd435e050.png">
-
-
-
-
-
-
-
+#### 节点配置
+##### 初始化节点
+    dymd init <MONIKER> --chain-id 35-C
+##### 获得创世文件
+    wget -O genesis.json https://snapshots.polkachu.com/testnet-genesis/dymension/genesis.json --inet4-only
+    mv $HOME/genesis.json $HOME/.dymension/config/
+##### 修改gas
+    vim ~/.dymension/config/app.toml
+    设置为：minimum-gas-prices = "0.15udym"
+##### 建立external_address
+    sed -i -e 's/external_address = \"\"/external_address = \"'$(curl httpbin.org/ip | jq -r .origin)':26656\"/g' ~/.dymension/config/config.toml
+##### 建立seed_mode
+    在种子模式下，您的节点会不断爬网网络并查找对等方，要在种子模式下运行完整节点，请设置为：seed_mode = true
+    vim ~/.dymension/config/config.toml
+##### 加种子节点seeds
+    Dymension的35-C测试网的Dymension核心团队种子节点：c6cdcc7f8e1a33f864956a8201c304741411f219@3.214.163.125:26656
+    sed -i 's/seeds = ""/seeds = "f97a75fb69d3a5fe893dca7c8d238ccc0bd66a8f@dymension-testnet.seed.brocha.in:30584,ebc272824924ea1a27ea3183dd0b9ba713494f83@dymension-testnet-seed.autostake.net:27086,b78dd0e25e28ec0b43412205f7c6780be8775b43@dym.seed.takeshi.team:10356,babc3f3f7804933265ec9c40ad94f4da8e9e0017@testnet-seed.rhinostake.com:20556,c6cdcc7f8e1a33f864956a8201c304741411f219@3.214.163.125:26656"/' ~/.dymension/config/config.toml
+##### 加持久对等节点persistent_peers
+    您指定的节点是受信任的持久对等节点，可以帮助在 p2p 网络中锚定您的节点。
+    sed -i 's/persistent_peers = ""/persistent_peers = "ebc272824924ea1a27ea3183dd0b9ba713494f83@dymension-testnet-peer.autostake.net:27086,9111fd409e5521470b9b33a46009f5e53c646a0d@178.62.81.245:45656,f8a0d7c7db90c53a989e2341746b88433f47f980@209.182.238.30:30657,1bffcd1690806b5796415ff72f02157ce048bcdd@144.76.67.53:2580,c17a4bcba59a0cbb10b91cd2cee0940c610d26ee@95.217.144.107:20556,e6ea3444ac85302c336000ac036f4d86b97b3d3e@38.146.3.199:20556,b473a649e58b49bc62b557e94d35a2c8c0ee9375@95.214.53.46:36656,db0264c412618949ce3a63cb07328d027e433372@146.19.24.101:26646,281190aa44ca82fb47afe60ba1a8902bae469b2a@dymension.peers.stavr.tech:17806,290ec1fc5cc5667d4e072cf336758d744d291ef1@65.109.104.118:60556,d8b1bcfc123e63b24d0ebf86ab674a0fc5cb3b06@51.159.97.212:26656,55f233c7c4bea21a47d266921ca5fce657f3adf7@168.119.240.200:26656,139340424dddf85e54e0a54179d06875013e1e39@65.109.87.88:24656"/' ~/.dymension/config/config.toml
+##### 修改链版本
+    sed -i 's/chain-id = ""/chain-id = "35-C"/' ~/.dymension/config/client.toml
 
 
 
