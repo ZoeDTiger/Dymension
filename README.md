@@ -83,15 +83,30 @@
 ##### 修改链版本
     sed -i 's/chain-id = ""/chain-id = "35-C"/' ~/.dymension/config/client.toml
 
+#### 设置本地节点
+##### 生成帐户
+    dymd keys add <KEY_NAME_HERE>
+<img width="598" alt="微信图片_20230307160428" src="https://user-images.githubusercontent.com/100336530/223361230-92b810e7-7a4d-4aea-affc-d0d1cfec8a52.png">
 
+##### 添加账户并设置初始余额
+    dymd add-genesis-account <ADDRESS_HERE> 600000000000udym
+<img width="615" alt="微信图片_20230307160515" src="https://user-images.githubusercontent.com/100336530/223361400-d1009b94-2ddc-4924-9237-c81686912fa5.png">
 
+##### 通过创世文件中包含的称为 gentx 的特殊事务声明您的验证者和自我委托
+    dymd gentx <KEY_NAME> 500000000000udym --chain-id 35-C
+<img width="884" alt="微信图片_20230307160701" src="https://user-images.githubusercontent.com/100336530/223361745-e35a468d-4a5c-483f-9d68-5b67072fd0df.png">
 
+##### 将 gentx 添加到创世文件中
+    dymd collect-gentxs
 
+##### 运行完整节点
+    screen -S <YOUR_NAME>
+    dymd start
 
-
-
-
-
+##### 查看状态
+###### 可以通过latest_block_height与catching_up来确认是否完成同步
+    dymd status
+<img width="886" alt="微信图片_20230307160941" src="https://user-images.githubusercontent.com/100336530/223362341-22eb9b50-b74d-4a24-aa2e-285a6ad4d558.png">
 
 
 
