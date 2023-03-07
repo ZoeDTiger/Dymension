@@ -108,10 +108,22 @@
     dymd status
 <img width="886" alt="微信图片_20230307160941" src="https://user-images.githubusercontent.com/100336530/223362341-22eb9b50-b74d-4a24-aa2e-285a6ad4d558.png">
 
+#### 创建验证器
+###### 完整节点必须同步到当前最新高度后才可操作
+    dymd tx staking create-validator \
+    --amount=500000000000udym \
+    --pubkey=$(dymd tendermint show-validator) \
+    --moniker="<your-moniker>" \
+    --chain-id=35-C \
+    --from=<key-name> \
+    --commission-rate="0.10" \
+    --commission-max-rate="0.20" \
+    --commission-max-change-rate="0.01" \
+    --min-self-delegation="1"
 
-
-
-
+##### 确认验证器处于活动状态
+###### 如果运行以下命令返回某些内容，则您的验证器处于活动状态
+    dymd query tendermint-validator-set | grep "$(dymd tendermint show-address)"
 
 
 
