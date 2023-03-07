@@ -125,6 +125,23 @@
 ###### 如果运行以下命令返回某些内容，则您的验证器处于活动状态
     dymd query tendermint-validator-set | grep "$(dymd tendermint show-address)"
 
+#### 升级
+##### 创建备份
+    在将节点升级到最新版本之前，您首先需要重置数据。但是重置数据会影响您的原始文件：priv_validator.json、cargo.toml，确保创建这两个文件的备份。
+
+##### 重置数据
+###### 删除过时的文件并重置数据
+    rm ~/.dymension/config/genesis.json
+    rm ~/.dymension/config/addrbook.json
+    dymd unsafe-reset-all
+
+##### 软件升级
+    转到项目目录并拉取正确的版本
+    
+
+
+
+
 
 
 
