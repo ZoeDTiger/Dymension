@@ -36,6 +36,37 @@
     
     source /etc/profile
     
+### 完整节点部署
+#### 获得Dymension Hub
+    git clone https://github.com/dymensionxyz/dymension.git --branch v0.2.0-beta
+    cd dymension
+#### 构建，在GOPATH环境变量中生成可执行文件dymd
+    make install
+    sudo cp $HOME/go/bin/dymd /usr/local/bin
+#### 验证 Dymension Hub 完整节点是否已正确安装
+    dymd version --long
+    <img width="519" alt="微信图片_20230307154446" src="https://user-images.githubusercontent.com/100336530/223357077-71a3e0a9-ba36-40bf-9d86-d1ecd435e050.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
