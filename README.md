@@ -1,6 +1,6 @@
 ## Dymension 非激励公共测试网35-C验证节点部署
 ### 项目基本情况
-    Dymension模块化区块链网络，Dymension Hub是模块化区块链的桥接中心，也称为RollApps。35-C做为Dymension的第一个非激励公共测试网以开始测试模块化链论文。
+    Dymension是模块化区块链网络，DYM为其原生代币。Dymension Hub是模块化区块链的桥接中心，也称为RollApps。35-C做为Dymension的第一个非激励公共测试网以开始测试模块化链论文。
     
     在Discord上担任RollApp Fam角色的社区成员将能够在今年第二季度的激励测试网上部署自己的RollApp，有关RollAppFam角色和Q2激励测试网的更多信息，可通过https://discord.gg/dymension获得。
     
@@ -10,6 +10,37 @@
     EVM RollApp：用户将能够通过熟悉的Solidity智能合约体验超低潜在区块链
     CosmWasm RollApp：用户将能够部署强大的CosmWasm智能合约
 
-###
+### 部署节点的基本条件
+#### 支持的操作系统
+    darwin/arm64
+    darwin/x86_64
+    linux/arm64
+    linux/x86_64
+#### 硬件条件
+    CPU：双核
+    磁盘：500GB及以上SSD
+    内存：16GB及以上
+    网络：100mbps及以上
+#### 软件条件
+    安装 Go 是运行 Dymension Hub 全节点的先决条件，安装步骤如下：
+    cd $HOME
+    wget "https://go.dev/dl/go1.19.4.linux-amd64.tar.gz"
+    sudo rm -rf /usr/local/go
+    sudo tar -C /usr/local -zxvf go1.19.4.linux-amd64.tar.gz
+    
+    echo "export GOROOT=/usr/local/go" |  sudo tee -a /etc/profile
+    echo "export GOPATH=$HOME/go" |  sudo tee -a /etc/profile
+    echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" |  sudo tee -a /etc/profile
+    echo "export GO111MODULE=on" |  sudo tee -a /etc/profile
+    echo "export GOPROXY=https://goproxy.cn" |  sudo tee -a /etc/profile
+    
+    source /etc/profile
+    
+
+
+
+
+
+
 
 
