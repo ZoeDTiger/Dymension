@@ -135,7 +135,7 @@
     --commission-max-rate=0.2 \
     --commission-max-change-rate=0.05 \
     --min-self-delegation=1 \
-    --fees=1000udym \
+    --fees=30000udym \
     --from=wallet \
     -y
 
