@@ -125,18 +125,18 @@
     dymd q staking validator $(dymd keys show wallet --bech val -a)
     
 ###### 完整节点必须同步到当前最新高度后才可操作
-  dymd tx staking create-validator \
-  --amount=1000000udym \
-  --pubkey=$(dymd tendermint show-validator) \
-  --moniker="$NODE_MONIKER" \
-  --chain-id=35-C \
-  --commission-rate=0.1 \
-  --commission-max-rate=0.2 \
-  --commission-max-change-rate=0.05 \
-  --min-self-delegation=1 \
-  --fees=1000udym \
-  --from=wallet \
-  -y
+   dymd tx staking create-validator \
+   --amount=1000000udym \
+   --pubkey=$(dymd tendermint show-validator) \
+   --moniker="$NODE_MONIKER" \
+   --chain-id=35-C \
+   --commission-rate=0.1 \
+   --commission-max-rate=0.2 \
+   --commission-max-change-rate=0.05 \
+   --min-self-delegation=1 \
+   --fees=1000udym \
+   --from=wallet \
+   -y
 
 ##### 确认验证器处于活动状态
 ###### 如果运行以下命令返回某些内容，则您的验证器处于活动状态
