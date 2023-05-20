@@ -115,6 +115,7 @@
 ##### 查看状态
 ###### 可以通过latest_block_height与catching_up来确认是否完成同步
     dymd status
+    dymd status 2>&1 | jq .SyncInfo
 <img width="886" alt="微信图片_20230307160941" src="https://user-images.githubusercontent.com/100336530/223362341-22eb9b50-b74d-4a24-aa2e-285a6ad4d558.png">
 
 #### 创建验证器
