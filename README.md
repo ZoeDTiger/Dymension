@@ -14,6 +14,9 @@
     其它两个RollApps：
     EVM RollApp：用户将能够通过熟悉的Solidity智能合约体验超低潜在区块链
     CosmWasm RollApp：用户将能够部署强大的CosmWasm智能合约
+    
+    区块浏览器：
+    https://explorer.silknodes.io/dymension/staking
 
 ### 部署节点的基本条件
 #### 支持的操作系统
